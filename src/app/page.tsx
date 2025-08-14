@@ -10,6 +10,8 @@ import Hero from './landing_page/Hero';
 import BuyingDecisionSection from './landing_page/BuyingDecisionSection';
 import EndToEndSupportSection from './landing_page/EndToEndSupportSection';
 import PropertyVerificationSection from './landing_page/PropertyVerificationSection';
+import PropertyReviewsSection from './landing_page/PropertyReviewsSection';
+
 const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col justify-start items-center w-full bg-global-15">
@@ -17,12 +19,13 @@ const HomePage: React.FC = () => {
         <Header />
         <Hero />
         <BuyingDecisionSection />
+        <PropertyReviewsSection />
         <EndToEndSupportSection id="our-process" />
         <PropertyVerificationSection />
         <SellSection id="buy"/>
         <ReviewsSection id="sell"/>
         <BlogSection id="blogs"/>
-        <ContactForm />
+        <ContactForm id='contact-form'/>
         <Footer />
       </div>
     </div>

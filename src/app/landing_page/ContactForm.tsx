@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-const ContactForm = () => {
+interface ContactFormProps {
+  id?: string;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ id }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
@@ -11,7 +15,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full mt-[82px] lg:mt-[164px] px-4 lg:px-[72px]">
+    <section className="w-full mt-[82px] lg:mt-[164px] px-4 lg:px-[72px]" id={id}>
       <div className="flex flex-col lg:flex-row justify-start items-center w-full">
         <div className="w-full lg:w-[58%] flex flex-col gap-[35px] lg:gap-[70px] justify-start items-start pr-[9px] lg:pr-[18px]">
           <div className="flex flex-col gap-[27px] lg:gap-[54px] justify-start items-start w-full">

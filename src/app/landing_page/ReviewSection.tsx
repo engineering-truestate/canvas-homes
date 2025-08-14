@@ -59,7 +59,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ id }) => {
   ];
 
   // Custom navigation
-  const navigateToSlide = (index) => {
+  const navigateToSlide = (index: any) => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideToLoop(index);
     }

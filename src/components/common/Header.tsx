@@ -1,13 +1,8 @@
 // React core imports
 import React, { useEffect, useState } from 'react';
-
-// Next.js specific imports
 import Image from 'next/image';
 
-// Local component imports
 import Button from '../ui/Button';
-
-// Local data or constants
 import { sections } from '@/data/optionsData';
 
 // Reusable Icons
@@ -31,18 +26,30 @@ const IconClose = () => (
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState<string>('');
+  const [clickedItem, setClickedItem] = useState<string>('');
 
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 72;
+      const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+
+      setClickedItem(id); // Set clicked item immediately
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+
       setMenuOpen(false);
-      setActiveItem(id);
+      // Clear clicked item after scroll animation completes
+      setTimeout(() => setClickedItem(''), 800);
     }
   };
 
   useEffect(() => {
-    const ids = ['our-process', 'buy', 'blogs', 'sell'];
+    const ids = ['our-process', 'buy', 'blogs', 'sell', 'contact-form'];
     const elements = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
     if (!elements.length) return;
 
@@ -53,9 +60,8 @@ const Header: React.FC = () => {
       for (const el of elements) {
         const top = el.offsetTop;
         const bottom = top + el.offsetHeight;
-        if (y >= top && y < bottom) {
+        if (y >= top - el.offsetHeight / 2 && y < bottom - el.offsetHeight / 2) {
           current = el.id;
-          break;
         }
       }
       setActiveItem(current);
@@ -67,7 +73,12 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-[#d2bfbf] px-4 py-4 md:px-4">
+    <header
+  className={`sticky top-0 z-50 w-full bg-white px-4 py-3 md:px-14 lg:px-20 ${
+    menuOpen ? '' : 'border-b border-[#d2bfbf]'
+  }`}
+>
+
       <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between">
         {/* Left: Hamburger + Logo */}
         <div className="flex items-center gap-2">
@@ -80,7 +91,15 @@ const Header: React.FC = () => {
             {menuOpen ? <IconClose /> : <IconHamburger />}
           </button>
 
-          <div className="flex gap-1.5 items-center">
+          <div
+            className="flex gap-1.5 items-center cursor-pointer"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setActiveItem('');
+              setClickedItem('');
+              setMenuOpen(false);
+            }}
+          >
             <Image
               src="/images/img_vector_deep_purple_600.svg"
               alt="Canvas Homes Logo"
@@ -107,12 +126,29 @@ const Header: React.FC = () => {
               <span
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
-                className={`text-[18px] font-medium leading-[27px] text-center font-['Poppins'] cursor-pointer transition-colors ${activeItem === item.id
-                  ? 'text-global-6 border-b-2 border-global-6'
-                  : 'text-global-8 hover:text-global-6'
-                  }`}
+                className={`relative text-[18px] font-medium leading-[27px] text-center font-['Poppins'] cursor-pointer transition-colors duration-300 group ${
+                  activeItem === item.id || clickedItem === item.id
+                    ? 'text-global-6'
+                    : 'text-global-8 hover:text-global-6'
+                }`}
               >
                 {item.label}
+
+                {/* Active underline - visible when active or clicked */}
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-global-6 transform origin-center transition-transform duration-300 ${
+                    activeItem === item.id || clickedItem === item.id ? 'scale-x-100' : 'scale-x-0'
+                  }`}
+                />
+
+                {/* Hover underline - darker purple, only visible on hover when not active or clicked */}
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-purple-700 transform origin-center scale-x-0 transition-transform duration-300 ${
+                    activeItem === item.id || clickedItem === item.id
+                      ? 'group-hover:scale-x-0'
+                      : 'group-hover:scale-x-100'
+                  }`}
+                />
               </span>
             ))}
           </div>
@@ -130,7 +166,7 @@ const Header: React.FC = () => {
           <Button
             variant="primary"
             className="bg-button-1 hover:bg-global-6 text-global-20 font-semibold rounded-md px-[18px] md:px-[30px] py-2.5 text-center leading-snug max-[320px]:whitespace-normal"
-            onClick={() => handleScroll('contact')}
+            onClick={() => handleScroll('contact-form')}
           >
             Contact Now
           </Button>
