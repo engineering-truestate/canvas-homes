@@ -44,7 +44,8 @@
     "start": "next dev -p 4028",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,md,json}\"",
     "serve": "next start",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "export": "next export"
   },
   "dependencies": {
     "@dhiwise/component-tagger": "^1.0.10",
