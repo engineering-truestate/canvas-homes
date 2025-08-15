@@ -107,20 +107,6 @@ const Hero: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Mobile Testimonial Card - positioned relative to stats */}
-                {/* <div className={`md:hidden absolute transition-all duration-500 ease-in-out z-30 ${
-                  isTestimonialExpanded 
-                    ? 'top-[-120px] left-1/2 transform -translate-x-1/2' 
-                    : 'top-0 left-full ml-4'
-                }`}>
-                  <TestimonialCard
-                    data={testimonialData} 
-                    className="w-[280px] transition-all duration-500 cursor-pointer"
-                    onClick={handleTestimonialClick}
-                    data-testimonial="true"
-                  />
-                </div> */}
-
                 {/* Overlay for mobile when testimonial is expanded */}
                 {isTestimonialExpanded && (
                   <div className="md:hidden fixed inset-0 bg-black bg-opacity-30 z-20" />
@@ -130,13 +116,17 @@ const Hero: React.FC = () => {
 
             {/* Expert Card - Desktop only */}
             <div className="hidden max-w-[592px] md:flex flex-row gap-6 w-full p-[18px] bg-global-9 border-2 border-[#ffecec] rounded-[4px]">
-              <Image
-                src="/images/img_ellipse_3.png"
-                alt="Amit Daga"
-                width={60}
-                height={60}
-                className="w-[60px] h-[60px] rounded-full"
-              />
+              <div className="w-[60px] h-[60px] relative rounded-full overflow-hidden">
+                <Image
+                  src="/images/img_ellipse_3.png"
+                  alt="Amit Daga"
+                  fill
+                  sizes="60px"
+                  style={{ objectFit: 'cover' }}
+                  priority={false}
+                  unoptimized={true}
+                />
+              </div>
               <div className="flex flex-col gap-1.5 flex-1">
                 <div className="flex flex-col w-full">
                   <span className="text-[24px] font-medium leading-[1.1] text-global-6 font-['Poppins']">
@@ -166,8 +156,15 @@ const Hero: React.FC = () => {
 
         {/* Right Image & Testimonial - Desktop only */}
         <div className="hidden md:flex relative w-[50%] h-[500px] items-end mt-0 pb-6">
-          {/* Main Image */}
-          <div className="absolute inset-0 right-0 bg-[url('/images/img_hut.svg')] bg-contain bg-no-repeat bg-center" />
+          {/* Main Image - Using regular img tag for SVG background */}
+          <div className="absolute inset-0 right-0">
+            <img 
+              src="/images/img_hut.svg" 
+              alt="House illustration"
+              className="w-full h-full object-contain object-center"
+              loading="lazy"
+            />
+          </div>
 
           {/* Testimonial - Desktop */}
           <TestimonialCard data={testimonialData} className="absolute top-[5%] left-10 w-[280px]" />
