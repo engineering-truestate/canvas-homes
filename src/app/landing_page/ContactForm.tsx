@@ -21,9 +21,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ id }) => {
           <div className="flex flex-col gap-[27px] lg:gap-[54px] justify-start items-start w-full">
             <div className="flex flex-col justify-start items-center w-full">
               <div className="flex flex-col justify-start items-start w-full">
-                <button className="bg-global-6 text-global-20 font-medium rounded-[18px] px-3 py-1.5 border border-[#bdb9b9] w-auto">
-                  Blogs
-                </button>
                 <h2 className="text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-medium leading-[1.5] text-left text-global-4 font-['Poppins'] w-auto mt-[-1px] lg:mt-[-2px]">
                   Step into your space
                 </h2>
