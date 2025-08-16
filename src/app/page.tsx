@@ -21,7 +21,6 @@ const HomePage: React.FC = () => {
         <BuyingDecisionSection />
         <PropertyReviewsSection />
         <EndToEndSupportSection id="our-process" />
-        <PropertyVerificationSection />
         <SellSection id="buy"/>
         <ReviewsSection id="sell"/>
         <BlogSection id="blogs"/>

@@ -116,7 +116,7 @@ const EndToEndSupportSection: React.FC<EndToEndSupportSectionProps> = ({ id }) =
             </div>
             <Button
               variant="primary"
-              className="bg-global-15 hover:bg-gray-100 text-global-6 font-semibold rounded-[10px] px-[34px] py-[14px] border-2 border-[#aca3ba] w-auto mt-[16px]"
+              className="bg-global-15 hover:bg-gray-100 text-global-6 font-semibold rounded-[10px] px-[34px] py-[14px] border-2 border-[#aca3ba] mt-[16px] w-[40%]"
             >
               Talk to an Expert Today
             </Button>
