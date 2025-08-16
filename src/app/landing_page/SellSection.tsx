@@ -41,18 +41,14 @@ const SellSection: React.FC<SellSectionProps> = ({ id }) => {
                 <div className="flex flex-col gap-[4px] lg:gap-[8px] justify-start items-start w-full">
                   <Button
                     variant="primary"
-                    className="bg-global-6 text-global-20 font-medium rounded-[18px] px-4 py-1.5 border border-[#bdb9b9] w-auto"
+                    className="bg-global-6 text-global-20 font-medium px-4 py-1 border border-[#bdb9b9] w-auto rounded-full"
                   >
                     Loan Made Easy
                   </Button>
                   <h2 className="text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-medium leading-[1.2] text-left text-global-20 font-['Poppins'] w-auto">
-                    Found Your Dream Home?{'\n'}Secure it With the Best Loan.
+                    Found Your Dream Home?<br/>Secure it With the Best Loan.
                   </h2>
                 </div>
-                <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-normal leading-[1.1] text-left text-global-19 font-['Poppins'] w-[90%]">
-                  Expert support, clear pricing, and personalised service for every step of your
-                  home buying journey
-                </p>
               </div>
               {/* Testimonial */}
               <div className="flex flex-row justify-center items-start w-[90%] bg-gradient-to-b from-[#8479b3] to-[#5d509a] rounded-[6px] p-[12px] lg:p-[24px] mb-[6px] lg:mb-[12px]">

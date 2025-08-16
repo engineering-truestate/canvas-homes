@@ -9,7 +9,6 @@ import SellSection from './landing_page/SellSection';
 import Hero from './landing_page/Hero';
 import BuyingDecisionSection from './landing_page/BuyingDecisionSection';
 import EndToEndSupportSection from './landing_page/EndToEndSupportSection';
-import PropertyVerificationSection from './landing_page/PropertyVerificationSection';
 import PropertyReviewsSection from './landing_page/PropertyReviewsSection';
 
 const HomePage: React.FC = () => {

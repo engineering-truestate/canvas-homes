@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -49,10 +49,10 @@ const BlogSection: React.FC<BlogSectionProps> = ({ id }) => {
   ];
 
   const [activeIndex, setActiveIndex] = useState(1);
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<SwiperRef>(null);
 
   // Custom navigation
-  const navigateToSlide = (index) => {
+  const navigateToSlide = (index: any) => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideToLoop(index);
     }
@@ -69,10 +69,6 @@ const BlogSection: React.FC<BlogSectionProps> = ({ id }) => {
           <h2 className="text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold leading-[1.2] text-center text-global-4 font-['Poppins']">
             Everything You Need to Know Before You Buy Your Dream Home
           </h2>
-          <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-medium leading-[1.5] text-center text-global-8 font-['Poppins']">
-            Understand the market, decode legal steps, and explore handpicked advice from
-            Bangalore&apos;s top home advisors.
-          </p>
         </div>
       </section>
 

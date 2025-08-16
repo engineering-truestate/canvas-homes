@@ -7,7 +7,6 @@ interface ReviewsSectionProps {
 }
 
 const ReviewsSection: React.FC<ReviewsSectionProps> = ({ id }) => {
-
   return (
     <>
       {/* WhatsApp Community Section */}
@@ -21,7 +20,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ id }) => {
                     Be Updated with Real Estate
                   </button>
                   <h2 className="text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold leading-[1.2] text-left text-global-20 font-['Poppins'] w-auto">
-                    Join our WhatsApp{'\n'}Community
+                    Join our WhatsApp Community
                   </h2>
                 </div>
                 <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-normal leading-[1.2] text-left text-global-20 font-['Poppins'] w-[94%]">
@@ -76,17 +75,18 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ id }) => {
                 </div>
 
                 {/* Selling Features */}
-                <div className="flex flex-col gap-[9px] lg:gap-[18px] justify-start items-center w-auto">
+                <div className="flex flex-col gap-[9px] lg:gap-[18px] w-auto">
                   {[
-                    { icon: '/images/img_trending_up.svg', title: 'Market Analysis' },
-                    { icon: '/images/img_users.svg', title: 'Buyer Network' },
+                    { icon: '/images/img_trending_up.svg', title: 'Market Trends' },
+                    { icon: '/images/img_users.svg', title: 'Buyers Network' },
                     { icon: '/images/img_calendar.svg', title: 'Fast Turnaround' },
-                    { icon: '/images/img_dollar_sign.svg', title: 'Pricing Strategy' },
+                    { icon: '/images/img_dollar_sign.svg', title: 'Cataloging Services' },
                   ].map((feature, index) => (
                     <div
                       key={index}
-                      className="flex flex-row gap-[9px] lg:gap-[18px] justify-center items-center w-auto"
+                      className="flex flex-row gap-[9px] lg:gap-[18px] items-center w-full"
                     >
+                      {/* Icon */}
                       <div className="w-[30px] h-[30px] lg:w-[60px] lg:h-[60px] bg-global-2 rounded-full p-[8px] lg:p-[16px] flex items-center justify-center">
                         <Image
                           src={feature.icon}
@@ -96,7 +96,9 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ id }) => {
                           className="w-full h-full"
                         />
                       </div>
-                      <span className="text-[16px] lg:text-[24px] font-medium leading-[1.5] text-left text-global-2 font-['Poppins'] w-auto">
+
+                      {/* Text */}
+                      <span className="text-[16px] lg:text-[24px] font-medium leading-[1.5] text-global-2 font-['Poppins']">
                         {feature.title}
                       </span>
                     </div>
@@ -112,45 +114,47 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ id }) => {
 
             {/* Right Column - Stats */}
             <div className="w-full lg:w-[50%] flex justify-center items-center mt-8 lg:mt-0">
-              <div className="flex flex-col gap-[24px] lg:gap-[48px] justify-start items-start w-full bg-gradient-to-b from-[#433878] to-[#8463cd] rounded-[10px] p-[14px] lg:p-[28px] mt-[5px] lg:mt-[10px]">
+              <div className="flex flex-col gap-[24px] lg:gap-[48px] justify-start items-center w-full bg-gradient-to-b from-[#433878] to-[#8463cd] rounded-[10px] p-[14px] lg:p-[28px] mt-[5px] lg:mt-[10px]">
                 <div className="flex flex-col gap-[20px] lg:gap-[40px] justify-start items-end w-[88%]">
                   <h3 className="text-[20px] lg:text-[40px] font-medium leading-[1] text-left text-global-20 font-['Poppins'] w-full">
                     Contact with High{'\n'}Intent Buyers
                   </h3>
-                  <div className="flex flex-row justify-center items-center w-auto bg-[#d9d9d926] border border-gray-400 rounded-[2px] p-[24px] lg:p-[48px] shadow-[0px_4px_8px_#888888ff]">
-                    <Image
-                      src="/images/img_group_935.svg"
-                      alt="Contact Stats"
-                      width={382}
-                      height={316}
-                      className="w-full h-auto max-w-[191px] max-h-[158px] lg:max-w-[382px] lg:max-h-[316px] object-contain"
-                    />
-                  </div>
+                </div>
+                <div className="flex flex-row justify-center items-center w-auto bg-[#d9d9d926] border border-gray-400 rounded-[2px] p-[24px] lg:p-[48px] shadow-[0px_4px_8px_#888888ff]">
+                  <Image
+                    src="/images/img_group_935.svg"
+                    alt="Contact Stats"
+                    width={382}
+                    height={316}
+                    className="w-full h-auto max-w-[191px] max-h-[158px] lg:max-w-[382px] lg:max-h-[316px] object-contain"
+                  />
                 </div>
 
                 {/* Stats Row */}
                 <div className="flex flex-row gap-[11px] lg:gap-[22px] justify-start items-center w-full">
-                  <div className="flex flex-col justify-center items-center w-full">
-                    <span className="text-[20px] lg:text-[32px] font-medium leading-[1] text-center bg-gradient-to-b from-[#f9f9ff] to-[#959599] bg-clip-text text-transparent font-['Poppins'] w-full">
+                  <div className="flex flex-col justify-center items-center flex-1">
+                    <span className="text-[20px] lg:text-[32px] font-medium leading-[1] text-center bg-gradient-to-b from-[#f9f9ff] to-[#959599] bg-clip-text text-transparent font-['Poppins']">
                       95%
                     </span>
-                    <span className="text-[16px] lg:text-[24px] font-normal leading-[1.5] text-left text-global-20 font-['Poppins'] w-auto">
+                    <span className="text-[16px] lg:text-[24px] font-normal leading-[1.5] text-center text-global-20 font-['Poppins']">
                       Success Rate
                     </span>
                   </div>
-                  <div className="flex flex-col justify-start items-center w-full">
-                    <span className="text-[20px] lg:text-[32px] font-medium leading-[1] text-center bg-gradient-to-b from-[#ffffff] to-[#999999] bg-clip-text text-transparent font-['Poppins'] w-full">
+
+                  <div className="flex flex-col justify-center items-center flex-1">
+                    <span className="text-[20px] lg:text-[32px] font-medium leading-[1] text-center bg-gradient-to-b from-[#ffffff] to-[#999999] bg-clip-text text-transparent font-['Poppins']">
                       30
                     </span>
-                    <span className="text-[16px] lg:text-[24px] font-normal leading-[1.5] text-left text-global-20 font-['Poppins'] w-auto">
+                    <span className="text-[16px] lg:text-[24px] font-normal leading-[1.5] text-center text-global-20 font-['Poppins']">
                       Daily Average
                     </span>
                   </div>
-                  <div className="flex flex-col justify-center items-center w-[30%]">
-                    <span className="text-[20px] lg:text-[32px] font-medium leading-[1] text-center bg-gradient-to-b from-[#ffffff] to-[#999999] bg-clip-text text-transparent font-['Poppins'] w-full">
+
+                  <div className="flex flex-col justify-center items-center flex-1">
+                    <span className="text-[20px] lg:text-[32px] font-medium leading-[1] text-center bg-gradient-to-b from-[#ffffff] to-[#999999] bg-clip-text text-transparent font-['Poppins']">
                       500+
                     </span>
-                    <span className="text-[16px] lg:text-[24px] font-normal leading-[1.5] text-left text-global-20 font-['Poppins'] w-auto">
+                    <span className="text-[16px] lg:text-[24px] font-normal leading-[1.5] text-center text-global-20 font-['Poppins']">
                       Homes Sold
                     </span>
                   </div>

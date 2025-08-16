@@ -12,13 +12,13 @@ const EndToEndSupportSection: React.FC<EndToEndSupportSectionProps> = ({ id }) =
   return (
     <section className="w-full mt-[75px] lg:mt-[150px] px-4 lg:px-[78px]" id={id}>
       <div className="relative w-full bg-white border border-[#E0E0E0] rounded-[10px] p-[24px] lg:bg-gradient-to-b lg:from-[#765dd2] lg:to-[#3d306c] lg:border-[#999090] lg:rounded-[10px] lg:p-[48px] overflow-hidden">
-
         {/* ===== MOBILE VIEW ===== */}
         <div className="flex flex-col items-center text-center gap-6 lg:hidden">
           {/* Heading */}
           <div>
             <h2 className="text-[20px] sm:text-[24px] font-semibold text-[#2E1F50] font-['Poppins'] leading-[1.3]">
-              End-to-End Support:<br /> With you at Every Step
+              End-to-End Support:
+              <br /> With you at Every Step
             </h2>
             <p className="text-[14px] sm:text-[16px] text-[#6B6B6B] mt-2 font-medium">
               We are your trusted partner for the entire home-buying journey.
@@ -29,7 +29,12 @@ const EndToEndSupportSection: React.FC<EndToEndSupportSectionProps> = ({ id }) =
           <div className="grid grid-cols-2 gap-x-6 gap-y-8 w-full">
             <div className="flex flex-col items-center">
               <div className="w-[48px] h-[48px] bg-[#2E1F50] rounded-[6px] flex items-center justify-center">
-                <Image src="/images/img_frame_gray_900.svg" alt="Discovery" width={24} height={24} />
+                <Image
+                  src="/images/img_frame_gray_900.svg"
+                  alt="Discovery"
+                  width={24}
+                  height={24}
+                />
               </div>
               <span className="mt-2 text-[14px] font-medium text-[#2E1F50]">Discovery</span>
             </div>
@@ -69,7 +74,12 @@ const EndToEndSupportSection: React.FC<EndToEndSupportSectionProps> = ({ id }) =
 
           {/* Decorative bottom-right image */}
           <div className="absolute bottom-0 right-0">
-            <Image src="/images/mobile-grid-decor.svg" alt="Decorative Grid" width={120} height={120} />
+            <Image
+              src="/images/mobile-grid-decor.svg"
+              alt="Decorative Grid"
+              width={120}
+              height={120}
+            />
           </div>
         </div>
 
@@ -80,7 +90,8 @@ const EndToEndSupportSection: React.FC<EndToEndSupportSectionProps> = ({ id }) =
             <div className="flex flex-col gap-[24px] lg:gap-[48px] w-[80%]">
               <div className="flex flex-col gap-[11px] lg:gap-[22px] w-full">
                 <h2 className="text-[48px] font-semibold leading-[1.2] text-global-20 font-['Poppins']">
-                  End-to-End Support:<br/> With you at Every Step
+                  End-to-End Support:
+                  <br /> With you at Every Step
                 </h2>
                 <p className="text-[24px] font-medium leading-[1.2] text-global-14 font-['Poppins']">
                   Where guidance meets trust, and trust meets results.
@@ -90,27 +101,49 @@ const EndToEndSupportSection: React.FC<EndToEndSupportSectionProps> = ({ id }) =
                 {/* same desktop grid items */}
                 <div className="flex items-center">
                   <div className="w-[72px] h-[72px] bg-global-8 border border-global-2 rounded-[6px] flex items-center justify-center p-[16px]">
-                    <Image src="/images/img_frame_gray_900.svg" alt="Discovery" width={36} height={36} />
+                    <Image
+                      src="/images/img_frame_gray_900.svg"
+                      alt="Discovery"
+                      width={36}
+                      height={36}
+                    />
                   </div>
-                  <span className="ml-[16px] text-[24px] font-medium text-global-20">Discovery</span>
+                  <span className="ml-[16px] text-[24px] font-medium text-global-20">
+                    Discovery
+                  </span>
                 </div>
+
                 <div className="flex items-center">
                   <div className="w-[72px] h-[72px] bg-global-8 rounded-[6px] flex items-center justify-center p-[16px]">
-                    <Image src="/images/img_frame_3351.svg" alt="Site Visits" width={36} height={36} />
+                    <Image
+                      src="/icons/due-deligence.svg"
+                      alt="Documentation"
+                      width={36}
+                      height={36}
+                    />
                   </div>
-                  <span className="ml-[16px] text-[24px] font-medium text-global-20">Handover</span>
+                  <span className="ml-[16px] text-[24px] font-medium text-global-20">
+                    Due Deligence
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-[72px] h-[72px] bg-global-8 border border-global-2 rounded-[6px] flex items-center justify-center p-[16px]">
                     <Image src="/icons/home-loans.svg" alt="Negotiations" width={36} height={36} />
                   </div>
-                  <span className="ml-[16px] text-[24px] font-medium text-global-20">Negotiations</span>
+                  <span className="ml-[16px] text-[24px] font-medium text-global-20">
+                    Home Loans
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-[72px] h-[72px] bg-global-8 rounded-[6px] flex items-center justify-center p-[16px]">
-                    <Image src="/icons/due-deligence.svg" alt="Documentation" width={36} height={36} />
+                    <Image
+                      src="/images/img_frame_3351.svg"
+                      alt="Site Visits"
+                      width={36}
+                      height={36}
+                    />
                   </div>
-                  <span className="ml-[16px] text-[24px] font-medium text-global-20">Documentation</span>
+                  <span className="ml-[16px] text-[24px] font-medium text-global-20">Handover</span>
                 </div>
               </div>
             </div>
@@ -122,8 +155,13 @@ const EndToEndSupportSection: React.FC<EndToEndSupportSectionProps> = ({ id }) =
             </Button>
           </div>
           {/* Right Absolute Image */}
-          <div className="absolute right-[40px] top-1/2 -translate-y-1/2">
-            <Image src="/images/img_group_937.png" alt="Support Illustration" width={382} height={700} />
+          <div className="absolute right-0 top-1/2 -translate-y-1/2">
+            <Image
+              src="/images/img_group_937.png"
+              alt="Support Illustration"
+              width={382}
+              height={700}
+            />
           </div>
         </div>
       </div>

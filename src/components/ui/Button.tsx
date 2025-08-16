@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElemen
   };
 
   // Responsive border radius
-  const responsiveRadius = 'rounded sm:rounded-md md:rounded-lg';
+  const responsiveRadius = '';
 
   // Responsive focus ring
   const responsiveFocus = 'focus:ring-2 sm:focus:ring-2 md:focus:ring-4';
